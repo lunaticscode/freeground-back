@@ -3,7 +3,7 @@ export interface UserProps extends Document{
     username: string,
     password: string,
     email: string,
-    profile: string,   
+    profile: string | null,   
 }
 const userSchema:Schema = new Schema({
     username: {
@@ -24,6 +24,6 @@ const userSchema:Schema = new Schema({
         type: "string",
         required: true,
     }
-})
+}, {collection: 'user'} )
 const User:Model<UserProps> = model("User", userSchema);
 export default User;

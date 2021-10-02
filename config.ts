@@ -4,5 +4,4 @@ const CONFIG = {
     MODE: process.env.MODE as string,
     MONGO_URI: process.env.MONOGO_URI as string,
 }
-
 export default CONFIG;
