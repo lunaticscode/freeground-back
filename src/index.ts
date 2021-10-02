@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import BaseConfig from '../config';
 import * as express from "express";
+import ConnectDB from '../config/database';
 
 const PORT = ( mode: string ) => {
    const mapModeToPort: any = {
@@ -14,6 +15,8 @@ const PORT = ( mode: string ) => {
    console.log( 'EXPRESS-PORT => ', port )
    return port;
 };
+
+ConnectDB()
 
 const app = express.default();
 app.get("/", (req: express.Request, res: express.Response ) => {
